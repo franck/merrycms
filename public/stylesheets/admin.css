@@ -22,9 +22,11 @@ body {
 }
 
 #nav { padding:0px; margin-bottom:20px; background-color:#333; color:#FFF; float:left; width:100%; }
-#nav ul { margin-left:15px; list-style:none; float:left; }
+#nav ul { margin:0; list-style:none; }
+#nav ul#left { float:left; margin-left:15px; }
 #nav ul li { float:left; padding:8px; }
 #nav a { color:#FFF; text-decoration:none; }
+#nav ul#right { float:right; margin-right:15px; }
 
 form textarea { width:100%; }
 
@@ -33,6 +35,7 @@ form textarea { width:100%; }
 .field_with_errors { margin:0; padding:0; }
 
 table { width:100%; }
+table tr td { vertical-align:top; }
 
 a.button {
   text-decoration:none; color:#FFF;
@@ -61,3 +64,24 @@ a.button {
   -webkit-box-shadow: 3px 3px 2px #CCC;
   box-shadow:3px 3px 2px #CCC;
 }
+
+/* =pagination
+-----------------------------------------------------*/
+.pagination { margin:15px 0;}
+.pagination a { text-decoration:none; display:inline-block; color:#333; }
+.pagination .disabled { color:#999; }
+.pagination .current { font-weight:bold; background:#333; color:#FFF; padding:2px; }
+
+/* =translations
+-----------------------------------------------------*/
+#translations {}
+#translations table span.key { font-size:0.9em; color:#999; }
+#translations .delete { text-indent:-10000px; background:url(/images/merrycms/delete.png); display:block; width:16px; height:16px; opacity:0.6; }
+#translations table tr td.actions { vertical-align:middle; }
+#translations ul { list-style:none; }
+#translations .count {
+  color: #fff; font-weight: bold; background: #c00; font-size: 9px; padding: 3px; 
+  -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px;
+  line-height: 9px; vertical-align: top; display: inline-block; 
+}
+#translations .no_translation { color:red; }

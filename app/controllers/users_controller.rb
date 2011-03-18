@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
   
   def index
-    @users = User.order(:email)
+    @users = User.order(:email).page(params[:page])
   end
   
   def new

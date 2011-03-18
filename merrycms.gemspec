@@ -9,18 +9,32 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Franck D'agostini"]
-  s.date = %q{2011-03-14}
+  s.date = %q{2011-03-18}
   s.description = %q{Admin panel for rails3 app : user management, pages, categories}
   s.email = %q{franck.dagostini@gmail.com}
+  s.extra_rdoc_files = [
+    "README"
+  ]
   s.files = [
+    "app/controllers/categories_controller.rb",
     "app/controllers/pages_controller.rb",
+    "app/controllers/translations_controller.rb",
     "app/controllers/users_controller.rb",
+    "app/helpers/categories_helper.rb",
+    "app/helpers/pages_helper.rb",
+    "app/helpers/translations_helper.rb",
     "app/helpers/users_helper.rb",
     "app/models/category.rb",
     "app/models/page.rb",
     "app/models/role.rb",
+    "app/models/translation.rb",
     "app/models/user.rb",
     "app/views/admin/_nav.html.erb",
+    "app/views/categories/_form.erb",
+    "app/views/categories/edit.html.erb",
+    "app/views/categories/index.html.erb",
+    "app/views/categories/new.html.erb",
+    "app/views/categories/sort.html.erb",
     "app/views/devise/confirmations/new.html.erb",
     "app/views/devise/mailer/confirmation_instructions.html.erb",
     "app/views/devise/mailer/reset_password_instructions.html.erb",
@@ -41,6 +55,9 @@ Gem::Specification.new do |s|
     "app/views/shared/_error_messages.html.erb",
     "app/views/shared/_flashbox.html.erb",
     "app/views/shared/_toplinks.html.erb",
+    "app/views/translations/destroy.js",
+    "app/views/translations/index.html.erb",
+    "app/views/translations/new.html.erb",
     "app/views/users/_form.html.erb",
     "app/views/users/edit.html.erb",
     "app/views/users/index.html.erb",
@@ -51,17 +68,20 @@ Gem::Specification.new do |s|
     "config/locales/fr/admin/merrycms.fr.yml",
     "config/locales/fr/admin/pages.fr.yml",
     "config/locales/fr/admin/toplinks.fr.yml",
+    "config/locales/fr/admin/translations.fr.yml",
     "config/locales/fr/admin/users.fr.yml",
-    "config/routes.rb",
     "lib/generators/merrycms/install_generator.rb",
-    "lib/generators/merrycms/templates/create_pages_migration.rb",
+    "lib/generators/merrycms/templates/create_pages_and_categories_migration.rb",
     "lib/generators/merrycms/templates/create_roles_migration.rb",
+    "lib/generators/merrycms/templates/create_translations_migration.rb",
     "lib/generators/merrycms/templates/devise_create_users_migration.rb",
     "lib/generators/merrycms/templates/devise_initializer.rb",
+    "lib/generators/merrycms/templates/locale_initializer.rb",
     "lib/generators/merrycms/templates/roles_users_migration.rb",
     "lib/generators/merrycms/views_generator.rb",
     "lib/merrycms.rb",
     "lib/merrycms/engine.rb",
+    "lib/merrycms/rails/routes.rb",
     "lib/merrycms/railties/merrycms_tasks.rake"
   ]
   s.homepage = %q{https://github.com/franck/merrycms}
@@ -80,6 +100,9 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<friendly_id>, [">= 0"])
       s.add_runtime_dependency(%q<transitions>, [">= 0"])
       s.add_runtime_dependency(%q<nested_set>, [">= 0"])
+      s.add_runtime_dependency(%q<i18n-active_record>, [">= 0"])
+      s.add_runtime_dependency(%q<jquery-rails>, [">= 0.2.6"])
+      s.add_runtime_dependency(%q<kaminari>, [">= 0"])
     else
       s.add_dependency(%q<devise>, [">= 1.1.7"])
       s.add_dependency(%q<acl9>, [">= 0"])
@@ -87,6 +110,9 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<friendly_id>, [">= 0"])
       s.add_dependency(%q<transitions>, [">= 0"])
       s.add_dependency(%q<nested_set>, [">= 0"])
+      s.add_dependency(%q<i18n-active_record>, [">= 0"])
+      s.add_dependency(%q<jquery-rails>, [">= 0.2.6"])
+      s.add_dependency(%q<kaminari>, [">= 0"])
     end
   else
     s.add_dependency(%q<devise>, [">= 1.1.7"])
@@ -95,6 +121,9 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<friendly_id>, [">= 0"])
     s.add_dependency(%q<transitions>, [">= 0"])
     s.add_dependency(%q<nested_set>, [">= 0"])
+    s.add_dependency(%q<i18n-active_record>, [">= 0"])
+    s.add_dependency(%q<jquery-rails>, [">= 0.2.6"])
+    s.add_dependency(%q<kaminari>, [">= 0"])
   end
 end
 

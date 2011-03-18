@@ -14,6 +14,9 @@ begin
     gemspec.add_dependency 'friendly_id'
     gemspec.add_dependency 'transitions'
     gemspec.add_dependency 'nested_set'
+    gemspec.add_dependency 'i18n-active_record'#, :git => 'git://github.com/svenfuchs/i18n-active_record.git', :require => 'i18n/active_record'
+    gemspec.add_dependency 'jquery-rails', '>= 0.2.6'
+    gemspec.add_dependency 'kaminari'
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError

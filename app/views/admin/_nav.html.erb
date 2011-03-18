@@ -1,7 +1,10 @@
 <div id="nav">
-  <ul>
-    <li><%= link_to t('.users'), users_path %></li>
+  <ul id="left">
     <li><%= link_to t('.pages'), pages_path %></li>
     <li><%= link_to t('.categories'), categories_path %></li>
+    <li><%= link_to t('.translations'), translations_path %></li>
+  </ul>
+  <ul id="right">
+    <li><%= link_to t('.users'), users_path %></li>
   </ul>
 </div>

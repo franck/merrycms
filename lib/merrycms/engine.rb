@@ -7,6 +7,9 @@ require 'active_record/transitions'
 require 'RedCloth'
 require 'friendly_id'
 require 'nested_set'
+require 'i18n/active_record'
+require 'merrycms/rails/routes'
+require 'kaminari'
 
 module Merrycms
   class Engine < Rails::Engine

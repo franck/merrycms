@@ -18,16 +18,16 @@ module Merrycms
     end
   
     # Authentication (Devise)
-    def copy_initializer
+    def copy_devise_initializer
       copy_file 'devise_initializer.rb', 'config/initializers/devise.rb'
     end
   
-    def add_devise_route
+    def add_devise_routes
       route 'devise_for :users'
     end
   
-    def add_root_route
-      route "match '/admin' => 'users#index'"
+    def add_merrycms_routes
+      route 'merrycms_routes'
     end
   
     def copy_locales
@@ -43,6 +43,8 @@ module Merrycms
       sleep 1
       migration_template 'create_pages_and_categories_migration.rb', 'db/migrate/create_pages_and_categories.rb'
       sleep 1
+      migration_template 'create_translations_migration.rb', 'db/migrate/create_translations.rb'
+      sleep 1
     end
     
     def copy_stylesheets
@@ -54,11 +56,16 @@ module Merrycms
     end
 
     def copy_javascripts
-      copy_file '../../../../public/javascripts/jquery.js', 'public/javascripts/jquery.js'
-      copy_file '../../../../public/javascripts/jquery.min.js', 'public/javascripts/jquery.min.js'
-      copy_file '../../../../public/javascripts/jquery-ui.min.js', 'public/javascripts/jquery-ui.min.js'
       copy_file '../../../../public/javascripts/form.js', 'public/javascripts/form.js'
       copy_file '../../../../public/javascripts/admin.js', 'public/javascripts/admin.js'
+    end
+    
+    def copy_images
+      directory '../../../../public/images/merrycms', 'public/images/merrycms'
+    end
+    
+    def copy_locale_initializer
+      copy_file 'locale_initializer.rb', 'config/initializers/locale.rb'
     end
     
     # pages and categories

@@ -1,0 +1,46 @@
+fr:
+  admin:
+    nav:
+      translations: Traductions
+      
+  translations:
+    locales:
+      fr: Français
+      en: Anglais
+      de: Allemand
+      es: Espagnol
+    version:
+      fr: Française
+      en: Anglaise
+      de: Allemande
+      es: Espagnole
+      
+    key: Elément à traduire
+    submit: Envoyer
+    delete: supprimer
+    
+    filter: Filtrer
+    
+    available_locales: Languages disponibles
+      
+    pending: Traductions en attentes
+    all: Toutes les traductions
+    
+    no_pending: Pas de traduction en attente
+    no_translation: Pas de traduction
+    
+    you_are_editing: Vous modifier la version
+      
+    index:
+      title: Traductions
+      
+    new:
+      title: Modification des traductions
+    
+    dump:
+      link: Appliquer les changements
+      confirm: Vous êtes sur le point d'enregistrer toutes les traductions. Cette opération n'est pas reversible. Voulez vous continuer ?
+    
+    notice:
+      translation_added: Traductions ajoutées
+      dumped: Traductions enregistrées

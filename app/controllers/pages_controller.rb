@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   end
   
   def index
-    @pages = Page.order(:title)
+    @pages = Page.order(:title).page(params[:page])
   end
   
   def new
