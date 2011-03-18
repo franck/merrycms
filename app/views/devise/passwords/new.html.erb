@@ -1,0 +1,16 @@
+<h1><%= t('.title') %></h1>
+
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= render "shared/error_messages", :target => resource %>
+  <ul>
+    <li>
+      <%= f.label :email, :class => 'desc' %>
+      <%= f.text_field :email %>
+    </li>
+    <li>
+      <%= f.submit t('.send_me_reset_password_instructions') %>
+    </li>
+  </ul>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

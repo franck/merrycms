@@ -1,0 +1,22 @@
+<h1>Catégories</h1>
+
+<p><%= link_to t('categories.links.new'), new_category_path, :class => "button" %></p>
+
+<table>
+  <tr>
+    <th><%= t('categories.name') %></th>
+    <th><%= t('categories.link') %></th>
+    <th></th>
+  </tr>
+<%= render_cat @categories, :sort => lambda{|x| x.position } do |node, child| %>
+  <tr>
+    <td><%= display_node(node) %></td>
+    <td><%= node.link %></td>
+    <td>
+      <%= display_edit_category_link(node) %>
+      <%= display_sort_category_link(node) %>
+    </td>
+  </tr>
+  <%= child %>
+<% end %>
+</table>

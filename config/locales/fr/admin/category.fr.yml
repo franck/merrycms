@@ -1,0 +1,22 @@
+fr:
+  categories:
+    name: Nom
+    link: Lien
+    parent: Parent
+    category: Catégorie
+    
+    submit: Envoyer
+    delete: Supprimer cette catégorie
+    
+    links:
+      new: Nouvelle catégorie
+      edit: modifier
+      sort: trier
+    
+    edit:
+      title: Modifier la catégorie
+    new:
+      title: Ajouter une catégorie
+    sort:
+      title: Trier les catégories
+      stop_sorting: arréter de trier

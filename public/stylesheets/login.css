@@ -1,0 +1,26 @@
+body {
+  text-align:center;
+  background: #EEE;
+  margin:0; padding:0;
+}
+#container {
+  text-align:left;
+  width:450px;
+  margin:30px auto;
+  background-color:transparent;
+}
+
+#toplinks{
+  text-align:right;
+  margin-bottom:15px;
+}
+
+#main {
+  background:#FFF;
+  padding:30px;
+}
+
+#errorExplanation { color:red; font-weight:bold; }
+#errorExplanation ul { list-style:none; }
+#errorExplanation ul li { margin:0; }
+.field_with_errors { margin:0; padding:0; }

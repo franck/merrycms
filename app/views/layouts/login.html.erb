@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>:: Login ::</title>
+    <%= stylesheet_link_tag ['reset', 'font', 'form', 'login'] %>
+    <%= javascript_include_tag :defaults %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body id="login">
+    <div id="container"><div id="wrapper">
+      <div id="main">
+        <%= render 'shared/flashbox' %>
+        
+        <%= yield %>
+      </div>
+    </div></div>
+  </body>
+</html>

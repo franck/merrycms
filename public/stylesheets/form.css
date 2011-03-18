@@ -1,0 +1,81 @@
+/* =standard form
+-------------------------------------------------*/
+form {
+  text-align:left;
+  padding:0;
+  margin:0;
+}
+form ul { list-style:none; }
+form ul li { margin-bottom:15px; }
+
+form div {
+  width:97% !important;
+  margin:0;padding:0;
+  margin-bottom:15px;
+}
+
+form div.field_with_errors {
+  display:inline;
+}
+
+form div label {
+  margin:0;padding:0;
+  color:#222;
+  font-weight:bold;
+  font-size:95%;
+  line-height:150%;
+  margin:0;padding:0;
+  border:medium none;
+}
+form label.desc {
+  display:block;
+}
+
+form fieldset {
+  margin:0;
+  padding:1em 0;
+  border:none;
+}
+
+form p {
+  margin:0;
+  line-height:20px;
+}
+form p.instruct {
+  margin:5px;
+  margin-left:3px;
+}
+form .instruct {
+  color:#666;
+  font-size:85%;
+  line-height:1.5em;
+}
+form p.red {
+  color:red;
+}
+
+form select {
+  margin:0;
+  font-size:1em;
+  height:1.7em;
+}
+
+form input.file {
+  width:auto;
+  padding:3px;
+  margin:0;
+  border: 1px solid #CCC;
+}
+form input.text {
+  width:auto;
+  padding:3px;
+  margin:0;
+  border: 1px solid #CCC;
+}
+form.with_margin ul li {
+  margin:1em 0;
+}
+
+form #errorExplanation p { color:red; font-weight:bold; }
+form #errorExplanation ul { margin-bottom:15px; list-style:square; }
+form #errorExplanation ul li { margin:0; margin-left:15px; color:red; font-weight:bold; }

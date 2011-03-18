@@ -1,0 +1,9 @@
+fr:
+  shared:
+    toplinks:
+      sign_in: "Se connecter"
+      sign_up: "Créer un compte"
+      signed_in_as: "Connecté en tant que %{user}"
+      sign_out: "Se deconnecter"
+      or: "ou"
+      site: "Accueil"

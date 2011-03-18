@@ -1,0 +1,28 @@
+<h1><%= t('.title') %></h1>
+
+<p><%= link_to t('.new_page'), new_page_path, :class => "button" %></p>
+
+<table>
+  <tr>
+    <th><%= t('activerecord.attributes.page.title') %></th>
+    <th><%= t('activerecord.attributes.page.link') %></th>
+    <th><%= t('categories.category') %></th>
+    <th><%= t('pages.state') %></th>
+    <th></th>
+  </tr>
+  <% if @pages.size == 0 %>
+  <tr>
+    <td colspan="5">Aucune page</td>
+  </tr>
+  <% else %>
+    <% @pages.each do |page| %>
+    <tr>
+      <td><%= link_to page.title, edit_page_path(page) %></a></td>
+      <td><%= page.link %></td>
+      <td><%= display_page_category(page) %></td>
+      <td><%= display_state(page) %></td>
+      <td><%= display_events(page) %></td>
+    </tr>
+    <% end %>
+  <% end %>
+</table>

@@ -1,0 +1,24 @@
+<%= form_for @category do |f| %>
+  <%= render "shared/error_messages", :target => @category %>
+  <div>
+    <%= f.label :name, t('categories.name'), :class => "desc required" %>
+    <%= f.text_field :name, :size => "80" %>
+  </div>
+  
+  <div>
+    <%= f.label :parent_id, t('categories.parent') %>
+    <%= f.select :parent_id, nested_set_options(Category, @category) {|i, level| "#{'-' * level} #{i.name}" } %>
+  </div>
+  
+  <div>
+    <%= f.submit t('categories.submit') %>
+    <%= link_to t('cancel'), categories_path %>
+  </div>
+<% end %>
+
+<% if @category.id && !@category.parent_id.nil? %>
+  <%= form_for @category, :html => { :method => "delete" } do |f| %>
+    <input type="hidden" name="_method" value="delete" />
+    <button type="submit"><%= t('categories.delete') %></button>
+  <% end %>
+<% end %>

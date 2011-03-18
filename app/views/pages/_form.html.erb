@@ -1,0 +1,25 @@
+<%= form_for @page do |f| %>
+  <%= render "shared/error_messages", :target => @page %>
+  <div>
+    <%= f.label :title, :class => "desc required" %>
+    <%= f.text_field :title, :size => "80" %>
+  </div>
+  <div>
+    <%= f.label :category_id, t('pages.category') %>
+    <%= f.select :category_id, sorted_nested_set_options(Category, lambda(&:name)) {|i, level| "#{'-' * level} #{i.name}" } %>
+  </div>
+  <div>
+    <%= f.text_area :content, :size => "60x30" %>
+  </div>
+  <div>
+    <%= f.submit t('.submit') %>
+    <%= link_to t('cancel'), pages_path %>
+  </div>
+<% end %>
+
+<% if @page.id %>
+  <%= form_for @page, :html => { :method => "delete" } do |f| %>
+    <input type="hidden" name="_method" value="delete" />
+    <button type="submit"><%= t('pages.delete') %></button>
+  <% end %>
+<% end %>

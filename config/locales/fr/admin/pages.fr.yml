@@ -1,0 +1,42 @@
+fr:
+  activerecord:
+    models:
+      page: Page
+    attributes:
+      page:        
+        title: Titre
+        link: Lien
+    errors:
+      models:
+        page:
+          attributes:
+            title: 
+              blank: Vous oubliez le titre
+  
+  pages:
+    
+    category: Catégorie
+    delete: Supprimer cette page
+    
+    state: Etat
+    states:
+      draft: brouillon
+      published: publié
+      archived: archivé
+      
+    events:
+      publish: publier
+      unpublish: dépublier
+      archive: archiver
+      unarchive: désarchiver
+        
+    
+    index:
+      title: Pages
+      new_page: Nouvelle page
+    new:
+      title: Nouvelle page
+    edit:
+      title: Modifier la page
+    form:
+      submit: Sauver

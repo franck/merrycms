@@ -1,0 +1,49 @@
+body { 
+  font-size: 100%;
+  font-family: "Lucida Sans", "Lucida Grande", Verdana, Arial, sans-serif;
+  color:#333;
+}
+html > body { font-size:13px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: georgia, times, sans-serif;
+  font-weight: normal;
+}
+h1, h2, h3, h4, h5, h6, h1 a , h2 a, h3 a, h4 a, h5 a, h6 a { color:#222; }
+
+
+h1 { font-size: 2em; line-height:1em; margin-top:0em; margin-bottom:1em; }
+h2 { font-size: 1.5em; line-height:1.125em; margin-top:1.929em; margin-bottom:0.643em; }
+h3 { font-size: 1.333em; line-height:1.125em; margin-top:1.929em; margin-bottom:0.643em; }
+h4 { font-size: 1.0833em; line-height:1.3846em; margin-top:1.929em; margin-bottom:0.643em; }
+
+p, cite { 
+  font-size:1em;
+  margin-top:1em;
+  margin-bottom:1em;
+  line-height:1.5em;
+}
+cite { color:#333; display:inline-block; margin:0; background-color:#F4F4F4; padding:1em; }
+ 
+a { color:#369; }
+a:visited { color:#C00; }
+
+ul { list-style:disc; line-height:1.5em; }
+ol { list-style:decimal; line-height:1.5em; }
+dl { line-height:1.5em; }
+dt { font-weight:bold; }
+dd { margin-bottom:0.643em; }
+
+img { margin:0; padding:0; }
+img.right { float:right; margin-left:10px; margin-bottom:10px; padding:4px; border:1px solid #EEE; }
+
+table {}
+th, td { line-height:1.5em; }
+th { padding:4px 8px; text-align:left; background-color:#333; color:#EEE; }
+td { padding:4px 8px; }
+tr.odd td { background-color:#EFEFEF; }
+
+.notice { color:green; font-weight:bold; }
+.alert, .error { color:red; font-weight:bold; }
+form label.required em { color:red; font-weight:bold; font-style:normal; }
+

@@ -1,0 +1,33 @@
+<%= form_for @user do |f| %>
+  <%= render "shared/error_messages", :target => @user %>
+  <div>
+    <%= f.label :email, :class => "desc required" %>
+    <%= f.text_field :email, :size => "60" %>
+  </div>
+  <div>
+    <%= f.label :password, :class => "desc required" %>
+    <%= f.password_field :password, :size => "30" %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation, :class => "desc required" %>
+    <%= f.password_field :password_confirmation, :size => "30" %>
+  </div>
+  
+  <ul id="roles">
+  <% for role in Role::ROLES %>      
+    <li><%= check_box_tag "roles[]", role, @user.has_role?(role), :disabled => @user.last_admin? %><%= role %></li>
+  <% end -%>
+  </ul>
+  
+  <div>
+    <%= f.submit "Envoyer" %>
+    <%= link_to t('cancel'), users_path %>
+  </div>
+<% end %>
+
+<% if @user.id %>
+  <%= form_for @user, :html => { :method => "delete" } do |f| %>
+    <input type="hidden" name="_method" value="delete" />
+    <button type="submit">Supprimer cet utilisateur</button>
+  <% end %>
+<% end %>
