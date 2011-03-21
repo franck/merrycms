@@ -1,6 +1,14 @@
 fr:
   users:
+    password: Mot de passe
+    password_confirmation: Confirmation du mot de passe
+    
     index:
       title: Utilisateurs
       roles: Roles
+    new:
+      title: Ajouter un utilisateur
+    edit:
+      title: Modifier l'utilisateur
+  
         

@@ -10,7 +10,7 @@
   <ul class='pending'>
   <% @pending_translations.each do |translation| %>
     <li>
-    <%= link_to t("translations.locales.#{translation[0]}"), new_translation_path(:language => translation[0], :type => 'pending') %>
+    <%= link_to t("translations.locales.#{translation[0]}"), new_admin_translation_path(:language => translation[0], :type => 'pending') %>
     <span class="count"><%= translation[1].size %></span>
     </li>
   <% end %>
@@ -23,7 +23,10 @@
   <% if @all_translations.size > 0 %>
   <ul class='all'>
   <% @all_translations.each do |translation| %>
-    <li><%= link_to t("translations.locales.#{translation[0]}"), new_translation_path(:language => translation[0]) %> <%= translation[1].size %></li>
+    <li>
+      <%= link_to t("translations.locales.#{translation[0]}"), new_admin_translation_path(:language => translation[0]) %>
+      <span class="count"><%= translation[1].size %></span>
+      </li>
   <% end %>
   </ul>
   <% else %>
@@ -31,7 +34,7 @@
   <% end %>
   
   <p>
-    <%= link_to t('translations.dump.link'), dump_translations_path, :confirm => t('translations.dump.confirm'), :class => 'button' %>
+    <%= link_to t('translations.dump.link'), dump_admin_translations_path, :confirm => t('translations.dump.confirm'), :class => 'button' %>
   </p>
   
 </div>

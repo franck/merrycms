@@ -1,6 +1,6 @@
-<h1><%= t('.title') %></h1>
+<h1><%= t('pages.index.title') %></h1>
 
-<p><%= link_to t('.new_page'), new_page_path, :class => "button" %></p>
+<p><%= link_to t('pages.index.new_page'), new_admin_page_path, :class => "button" %></p>
 
 <table>
   <tr>
@@ -17,7 +17,7 @@
   <% else %>
     <% @pages.each do |page| %>
     <tr>
-      <td><%= link_to page.title, edit_page_path(page) %></a></td>
+      <td><%= link_to page.title, edit_admin_page_path(page) %></a></td>
       <td><%= page.link %></td>
       <td><%= display_page_category(page) %></td>
       <td><%= display_state(page) %></td>

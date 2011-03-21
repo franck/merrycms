@@ -3,7 +3,7 @@ module ActionDispatch::Routing
   class Mapper
     
     def merrycms_routes
-      scope "/admin" do
+      namespace :admin do
         resources :users
         resources :pages do
           member do
@@ -26,8 +26,8 @@ module ActionDispatch::Routing
             get 'dump'
           end
         end
+        root :to => 'pages#index'
       end
-      match '/admin' => 'pages#index'
     end
     
   end

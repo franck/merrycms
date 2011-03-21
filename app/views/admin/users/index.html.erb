@@ -1,0 +1,18 @@
+<h1><%= t('users.index.title')%></h1>
+
+<p><%= link_to "Ajouter un utilisateur", new_admin_user_path, :class => "button" %></p>
+
+<table>
+  <tr>
+    <th><%= t('activerecord.attributes.user.email') %></th>
+    <th><%= t('users.index.roles') %></th>
+  </tr>
+  <% for user in @users %>
+  <tr>
+    <td><%= link_to user.email, edit_admin_user_path(user) %></td>
+    <td><%= display_user_roles(user) %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= paginate @users %>

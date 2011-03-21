@@ -7,7 +7,7 @@
 </ul>
 
 <p>
-  <%= link_to t('categories.sort.stop_sorting'), categories_path %>
+  <%= link_to t('categories.sort.stop_sorting'), admin_categories_path %>
 </p>
 
 
@@ -20,7 +20,7 @@
       dropOnEmpty: false,
       complete: function(request){$('ul').effect('highlight');},
       update: function() {
-        $.post('/categories/sorting', '_method=get'+'&'+$(this).sortable('serialize'));
+        $.post("<%= sorting_admin_categories_path %>", '_method=get'+'&'+$(this).sortable('serialize'));
     }}).disableSelection();
     
   });

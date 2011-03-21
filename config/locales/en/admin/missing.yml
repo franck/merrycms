@@ -1,0 +1,4 @@
+en:
+  i18n:
+    plural:
+      keys: [:zero, :one, :other]

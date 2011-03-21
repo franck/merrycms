@@ -1,7 +1,7 @@
-<%= form_for @page do |f| %>
+<%= form_for [:admin, @page] do |f| %>
   <%= render "shared/error_messages", :target => @page %>
   <div>
-    <%= f.label :title, :class => "desc required" %>
+    <%= f.label :title, t('pages.title'), :class => "desc required" %>
     <%= f.text_field :title, :size => "80" %>
   </div>
   <div>
@@ -12,13 +12,13 @@
     <%= f.text_area :content, :size => "60x30" %>
   </div>
   <div>
-    <%= f.submit t('.submit') %>
-    <%= link_to t('cancel'), pages_path %>
+    <%= f.submit t('pages.submit') %>
+    <%= link_to t('cancel'), admin_pages_path %>
   </div>
 <% end %>
 
 <% if @page.id %>
-  <%= form_for @page, :html => { :method => "delete" } do |f| %>
+  <%= form_for [:admin, @page], :html => { :method => "delete" } do |f| %>
     <input type="hidden" name="_method" value="delete" />
     <button type="submit"><%= t('pages.delete') %></button>
   <% end %>

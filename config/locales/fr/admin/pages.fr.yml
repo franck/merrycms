@@ -15,6 +15,9 @@ fr:
   
   pages:
     
+    title: Titre
+    submit: Envoyer
+    
     category: Catégorie
     delete: Supprimer cette page
     
