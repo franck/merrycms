@@ -28,6 +28,11 @@ body {
 #nav a { color:#FFF; text-decoration:none; }
 #nav ul#right { float:right; margin-right:15px; }
 
+form.search { background:transparent; border:none; padding:0; margin:15px 0; width:97%; overflow:hidden; }
+form.search label { color:#333; line-height:1em; margin-bottom:1px; }
+form.search input[type='text'] { padding:3px; line-height:1em; font-size:1em; border:1px solid #999; }
+form.search div.top p { padding:3px; }
+
 form textarea { width:100%; }
 
 #errorExplanation { color:red; font-weight:bold; }

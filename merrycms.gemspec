@@ -9,32 +9,46 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Franck D'agostini"]
-  s.date = %q{2011-03-18}
+  s.date = %q{2011-03-22}
   s.description = %q{Admin panel for rails3 app : user management, pages, categories}
   s.email = %q{franck.dagostini@gmail.com}
   s.extra_rdoc_files = [
     "README"
   ]
   s.files = [
-    "app/controllers/categories_controller.rb",
-    "app/controllers/pages_controller.rb",
-    "app/controllers/translations_controller.rb",
-    "app/controllers/users_controller.rb",
-    "app/helpers/categories_helper.rb",
-    "app/helpers/pages_helper.rb",
-    "app/helpers/translations_helper.rb",
-    "app/helpers/users_helper.rb",
+    "app/controllers/admin/base_controller.rb",
+    "app/controllers/admin/categories_controller.rb",
+    "app/controllers/admin/pages_controller.rb",
+    "app/controllers/admin/translations_controller.rb",
+    "app/controllers/admin/users_controller.rb",
+    "app/helpers/admin/categories_helper.rb",
+    "app/helpers/admin/pages_helper.rb",
+    "app/helpers/admin/translations_helper.rb",
+    "app/helpers/admin/users_helper.rb",
     "app/models/category.rb",
     "app/models/page.rb",
     "app/models/role.rb",
     "app/models/translation.rb",
     "app/models/user.rb",
     "app/views/admin/_nav.html.erb",
-    "app/views/categories/_form.erb",
-    "app/views/categories/edit.html.erb",
-    "app/views/categories/index.html.erb",
-    "app/views/categories/new.html.erb",
-    "app/views/categories/sort.html.erb",
+    "app/views/admin/categories/_form.erb",
+    "app/views/admin/categories/edit.html.erb",
+    "app/views/admin/categories/index.html.erb",
+    "app/views/admin/categories/new.html.erb",
+    "app/views/admin/categories/sort.html.erb",
+    "app/views/admin/pages/_form.html.erb",
+    "app/views/admin/pages/_search.erb",
+    "app/views/admin/pages/edit.html.erb",
+    "app/views/admin/pages/index.html.erb",
+    "app/views/admin/pages/new.html.erb",
+    "app/views/admin/translations/_filter.html.erb",
+    "app/views/admin/translations/destroy.js",
+    "app/views/admin/translations/index.html.erb",
+    "app/views/admin/translations/new.html.erb",
+    "app/views/admin/users/_form.html.erb",
+    "app/views/admin/users/edit.html.erb",
+    "app/views/admin/users/index.html.erb",
+    "app/views/admin/users/new.html.erb",
     "app/views/devise/confirmations/new.html.erb",
     "app/views/devise/mailer/confirmation_instructions.html.erb",
     "app/views/devise/mailer/reset_password_instructions.html.erb",
@@ -48,25 +62,17 @@ Gem::Specification.new do |s|
     "app/views/devise/unlocks/new.html.erb",
     "app/views/layouts/admin.html.erb",
     "app/views/layouts/login.html.erb",
-    "app/views/pages/_form.html.erb",
-    "app/views/pages/edit.html.erb",
-    "app/views/pages/index.html.erb",
-    "app/views/pages/new.html.erb",
     "app/views/shared/_error_messages.html.erb",
     "app/views/shared/_flashbox.html.erb",
     "app/views/shared/_toplinks.html.erb",
-    "app/views/translations/destroy.js",
-    "app/views/translations/index.html.erb",
-    "app/views/translations/new.html.erb",
-    "app/views/users/_form.html.erb",
-    "app/views/users/edit.html.erb",
-    "app/views/users/index.html.erb",
-    "app/views/users/new.html.erb",
+    "config/locales/en/admin/missing.yml",
     "config/locales/fr/admin/admin.fr.yml",
     "config/locales/fr/admin/category.fr.yml",
     "config/locales/fr/admin/devise.fr.yml",
     "config/locales/fr/admin/merrycms.fr.yml",
+    "config/locales/fr/admin/missing.yml",
     "config/locales/fr/admin/pages.fr.yml",
+    "config/locales/fr/admin/pagination.fr.yml",
     "config/locales/fr/admin/toplinks.fr.yml",
     "config/locales/fr/admin/translations.fr.yml",
     "config/locales/fr/admin/users.fr.yml",
@@ -103,6 +109,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<i18n-active_record>, [">= 0"])
       s.add_runtime_dependency(%q<jquery-rails>, [">= 0.2.6"])
       s.add_runtime_dependency(%q<kaminari>, [">= 0"])
+      s.add_runtime_dependency(%q<meta_search>, [">= 0"])
     else
       s.add_dependency(%q<devise>, [">= 1.1.7"])
       s.add_dependency(%q<acl9>, [">= 0"])
@@ -113,6 +120,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<i18n-active_record>, [">= 0"])
       s.add_dependency(%q<jquery-rails>, [">= 0.2.6"])
       s.add_dependency(%q<kaminari>, [">= 0"])
+      s.add_dependency(%q<meta_search>, [">= 0"])
     end
   else
     s.add_dependency(%q<devise>, [">= 1.1.7"])
@@ -124,6 +132,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<i18n-active_record>, [">= 0"])
     s.add_dependency(%q<jquery-rails>, [">= 0.2.6"])
     s.add_dependency(%q<kaminari>, [">= 0"])
+    s.add_dependency(%q<meta_search>, [">= 0"])
   end
 end
 

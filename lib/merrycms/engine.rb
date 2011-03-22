@@ -10,6 +10,7 @@ require 'nested_set'
 require 'i18n/active_record'
 require 'merrycms/rails/routes'
 require 'kaminari'
+require 'meta_search'
 
 module Merrycms
   class Engine < Rails::Engine

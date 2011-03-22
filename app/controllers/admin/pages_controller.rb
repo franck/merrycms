@@ -9,7 +9,8 @@ module Admin
     end
   
     def index
-      @pages = Page.order(:title).page(params[:page])
+      @search = Page.search(params[:search])
+      @pages = @search.order(:title).page(params[:page]).per(5)
     end
   
     def new

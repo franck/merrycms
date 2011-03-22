@@ -21,6 +21,12 @@ fr:
     category: Catégorie
     delete: Supprimer cette page
     
+    search:
+      title: Rechercher
+      page_title: Par titre
+      submit: Rechercher
+      
+    
     state: Etat
     states:
       draft: brouillon
