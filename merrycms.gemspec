@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{merrycms}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Franck D'agostini"]
-  s.date = %q{2011-03-22}
+  s.date = %q{2011-03-23}
   s.description = %q{Admin panel for rails3 app : user management, pages, categories}
   s.email = %q{franck.dagostini@gmail.com}
   s.extra_rdoc_files = [
@@ -41,10 +41,13 @@ Gem::Specification.new do |s|
     "app/views/admin/pages/edit.html.erb",
     "app/views/admin/pages/index.html.erb",
     "app/views/admin/pages/new.html.erb",
+    "app/views/admin/translations/_edit_javascript.erb",
     "app/views/admin/translations/_filter.html.erb",
+    "app/views/admin/translations/_form.erb",
+    "app/views/admin/translations/all.html.erb",
     "app/views/admin/translations/destroy.js",
     "app/views/admin/translations/index.html.erb",
-    "app/views/admin/translations/new.html.erb",
+    "app/views/admin/translations/pending.html.erb",
     "app/views/admin/users/_form.html.erb",
     "app/views/admin/users/edit.html.erb",
     "app/views/admin/users/index.html.erb",
