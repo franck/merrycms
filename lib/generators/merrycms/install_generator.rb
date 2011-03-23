@@ -56,6 +56,7 @@ module Merrycms
     end
 
     def copy_javascripts
+      copy_file '../../../../public/javascripts/admin.js', 'public/javascripts/jquery-ui.js'
       copy_file '../../../../public/javascripts/form.js', 'public/javascripts/form.js'
       copy_file '../../../../public/javascripts/admin.js', 'public/javascripts/admin.js'
       copy_file '../../../../public/javascripts/autoresize.jquery.min.js', 'public/javascripts/autoresize.jquery.min.js'

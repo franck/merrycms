@@ -14,12 +14,14 @@ module Admin
       @all_translations = Translation.not_pending.group_by{|t| t.locale }
     end
   
-    def new
-      if params[:type] && params[:type] == "pending"
-        @translations = Translation.search_query(params[:query]).pending.where(:locale => params[:language]).page(params[:page]).per(10)
-      else
-        @translations = Translation.search_query(params[:query]).not_pending.where(:locale => params[:language]).page(params[:page]).per(10)
-      end
+    def all
+      @search = Translation.not_pending.search(params[:search])
+      @translations = @search.where(:locale => params[:language]).page(params[:page]).per(10)
+    end
+    
+    def pending
+      @search = Translation.pending.search(params[:search])
+      @translations = @search.where(:locale => params[:language]).page(params[:page]).per(10)
     end
   
     def create

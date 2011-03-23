@@ -19,7 +19,10 @@ fr:
     submit: Envoyer
     delete: supprimer
     
-    filter: Filtrer
+    search:
+      title: Filtrer les traductions
+      key_or_value: Par clé ou valeur
+      submit: Filtrer
     
     available_locales: Languages disponibles
       

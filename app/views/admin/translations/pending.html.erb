@@ -1,0 +1,12 @@
+<div id="translations">
+  <h1><%= t('translations.new.title') %></h1>
+  <p><%= t('translations.you_are_editing') %> : <%= t("translations.version.#{params[:language]}") %></p>
+  
+  <%= render "filter" %>
+  
+  <%= paginate @translations %>
+  
+  <%= render :partial => 'form', :locals => { :translations => @translations } %>
+</div>
+
+<%= render 'edit_javascript' %>

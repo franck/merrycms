@@ -1,8 +1,15 @@
-<%= form_tag new_admin_translation_path, :method => :get do %>
+<%= form_for @search, :url => new_admin_translation_path, :html => {:method => :get, :class => 'search'} do |f| %>
 <div>
-  <%= hidden_field_tag "language", params[:language] %>
-  <%= hidden_field_tag "type", params[:type] %>
-  <%= text_field_tag "query", params[:query] %>
-  <%= submit_tag t('translations.filter') %>
+  <h3><%= t('translations.search.title') %></h3>
+  <div class='top'>
+    <%= f.label :key_or_value_contains, t('translations.search.key_or_value'), :class => 'desc' %>
+    <%= f.text_field :key_or_value_contains, :size => "20" %>
+  </div>
+  <div class='top'>
+    <label>&nbsp;</label>
+    <p>
+      <%= f.submit t('translations.search.submit') %>
+    </p>
+  </div>
 </div>
 <% end %>
