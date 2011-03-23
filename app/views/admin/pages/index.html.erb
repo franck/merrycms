@@ -4,6 +4,8 @@
 
 <%= render 'search' %>
 
+<%= paginate @pages %>
+
 <table>
   <tr>
     <th><%= t('activerecord.attributes.page.title') %></th>
@@ -29,4 +31,3 @@
   <% end %>
 </table>
 
-<%= paginate @pages %>

@@ -15,12 +15,12 @@ module Admin
     end
   
     def all
-      @search = Translation.not_pending.search(params[:search])
+      @search = Translation.not_pending.order("created_at desc").search(params[:search])
       @translations = @search.where(:locale => params[:language]).page(params[:page]).per(10)
     end
     
     def pending
-      @search = Translation.pending.search(params[:search])
+      @search = Translation.pending.order("created_at desc").search(params[:search])
       @translations = @search.where(:locale => params[:language]).page(params[:page]).per(10)
     end
   
@@ -43,7 +43,7 @@ module Admin
       @translation = Translation.find(params[:id])
       @translation.destroy
       respond_with(@translation) do |format|
-        format.html { redirect_to new_admin_translation_path(:type => params[:type], :language => params[:language]) }
+        format.html { redirect_to admin_translations_path(:language => params[:language]) }
         format.js
       end
     end

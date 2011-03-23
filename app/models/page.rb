@@ -28,9 +28,7 @@ class Page < ActiveRecord::Base
     event :unarchive do
       transitions :to => :draft, :from => :archived, :on_transition => :unset_archived_at
     end
-    
   end
-  
   
   def available_events
     Page.state_machines[:default].events_for(self.state.to_sym)

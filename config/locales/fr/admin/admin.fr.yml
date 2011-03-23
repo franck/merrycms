@@ -4,6 +4,6 @@ fr:
       pages: Pages
       users: Utilisateurs
       categories: Catégories
-  layouts:
-    admin:
-      signed_in_as: "Connecté en tant que %{user}"
+
+    website_home: Site
+    signed_in_as: "%{user}"

@@ -2,10 +2,23 @@ namespace :merrycms do
   
   desc "setup"
   task :setup => :environment do
-    system("rails generate merrycms:install")
+    system("rails generate merrycms:install_auth")
+    system("rails generate merrycms:install_pages")
+    system("rails generate merrycms:install_translations")
+    system("rails generate jquery:install")
+    
+    Rake::Task['merrycms:import_assets'].invoke
+    
     Rake::Task['db:migrate'].invoke
     Rake::Task['merrycms:bootstrap'].invoke
-    Rake::Task['jquery:install'].invoke
+  end
+
+  desc "Copies all merrycms assets to public/ directory"
+  task :import_assets => :environment do
+    merrycms_assets = File.expand_path(File.join(File.dirname(__FILE__), '../../../public/'))
+    command = "cp -R #{merrycms_assets} #{Rails.root}/"
+    puts command
+    system(command)
   end
 
   desc "bootstrap app"

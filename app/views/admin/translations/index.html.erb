@@ -10,7 +10,7 @@
   <ul class='pending'>
   <% @pending_translations.each do |translation| %>
     <li>
-    <%= link_to t("translations.locales.#{translation[0]}"), admin_pending_translations_path(:language => translation[0], :type => 'pending') %>
+    <%= link_to t("translations.locales.#{translation[0]}"), admin_pending_translations_path(:language => translation[0]) %>
     <span class="count"><%= translation[1].size %></span>
     </li>
   <% end %>

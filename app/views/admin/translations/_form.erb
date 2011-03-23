@@ -17,7 +17,7 @@
       <%= hidden_field_tag "translations[#{index}][destroy]", false, :class => 'translation-destroy' %>
       <%= text_area_tag "translations[#{index}][value]", translation[:value] %>
     </td>
-    <td class="actions"><%= link_to t('translations.delete'), admin_translation_path(translation[:id], :type => params[:type], :language => params[:language]), :method => :delete, :class => :delete, :remote => true %></td>
+    <td class="actions"><%= link_to t('translations.delete'), admin_translation_path(translation[:id], :language => params[:language]), :method => :delete, :class => :delete, :remote => true %></td>
   </tr>
   <% end %>
   <tr>

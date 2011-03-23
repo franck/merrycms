@@ -1,8 +1,9 @@
-<div id="toplinks">
+<div id="toplinks">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
   <% if user_signed_in? %>
-    <%= t('.signed_in_as', :user => current_user.email) %>.
+    <%= t('admin.signed_in_as', :user => current_user.email) %>.
     <%= link_to t('.sign_out'), destroy_user_session_path %> 
   <% else %> 
     <%= link_to t('.sign_up'), new_user_registration_path %> <%= t('.or') %> <%= link_to t('.sign_in'), new_user_session_path %> 
   <% end %>
+  &nbsp;<a href='/'><%= t('admin.website_home') %></a>
 </div>

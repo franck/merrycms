@@ -9,8 +9,9 @@ module Admin
     end
   
     def index
-      @search = Page.search(params[:search])
-      @pages = @search.order(:title).page(params[:page]).per(5)
+      @search = Page.includes(:category).search(params[:search])
+      @pages = @search.order("created_at desc").page(params[:page])
+      puts @pages # hack for kaminari
     end
   
     def new
