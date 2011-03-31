@@ -4,6 +4,14 @@ fr:
       pages: Pages
       users: Utilisateurs
       categories: Catégories
-
-    website_home: Site
-    signed_in_as: "%{user}"
+      media: Media
+      
+    toplinks:
+      sign_in: "Se connecter"
+      sign_up: "Créer un compte"
+      signed_in_as: "Connecté en tant que %{user}"
+      sign_out: "Se deconnecter"
+      or: "ou"
+      site: "Accueil"
+      website_home: Site
+      signed_in_as: "%{user}"

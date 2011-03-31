@@ -1,0 +1,7 @@
+<h1><%= t('images.edit.title') %></h1>
+
+<div id="images">
+  <%= image_tag @image.image.url(:medium), :class => 'image_file' %>
+
+  <%= render :partial => "form", :locals => { :image => @image } %>
+</div>

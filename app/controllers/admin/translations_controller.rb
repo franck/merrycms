@@ -1,5 +1,5 @@
 module Admin
-  class TranslationsController < ApplicationController
+  class TranslationsController < BaseController
     respond_to :html, :json
   
     layout "admin"

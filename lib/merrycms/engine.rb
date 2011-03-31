@@ -11,12 +11,18 @@ require 'i18n/active_record'
 require 'merrycms/rails/routes'
 require 'kaminari'
 require 'meta_search'
+require 'open4'
+require 'rvideo'
+require 'paperclip'
+require 'paperclip_processors/video_thumbnail'
+require 'paperclip_processors/poster'
 
 module Merrycms
   class Engine < Rails::Engine
     
     # I18n config
     #config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*', '*.{rb,yml}').to_s]
+    config.i18n.load_path += Dir[File.join(File.dirname(__FILE__), '../../config/locales/*/*.{rb,yml}')]
     config.i18n.load_path += Dir[File.join(File.dirname(__FILE__), '../../config/locales/*/admin/*.{rb,yml}')]
     config.i18n.default_locale = :fr
 

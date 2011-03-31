@@ -1,0 +1,38 @@
+fr:
+  activerecord:
+    errors:
+      models:
+        document:
+          attributes:
+            title:
+              blank: Vous devez donner un titre à ce document
+            doc:
+              blank: Vous oubliez le fichier
+              
+  documents:
+    subnav: Documents
+    
+    title: Titre
+    link: Lien
+    file_size: Taille
+    doc_field: Fichier
+    file_name: Nom du fichier
+    submit: Envoyer
+    delete: Supprimer ce document
+    
+    search:
+      title: Rechercher
+      document_title: Titre du document
+      submit: Rechercher
+    
+    links:
+      new: Ajouter un document
+    
+    index:
+      title: Documents
+      
+    new:
+      title: Ajouter un document
+    edit:
+      title: Modifier le document
+        

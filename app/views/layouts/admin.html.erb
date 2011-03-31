@@ -10,13 +10,15 @@
   </head>
   <body>
     <div id="container"><div id="wrapper">
-      <%= render 'shared/toplinks' %>
-      <%= render 'admin/nav' %>
-      <div id="main">
-        <%= render 'shared/flashbox' %>
-                
+      <%= render 'admin/shared/toplinks' %>
+      <%= render 'admin/shared/nav' %>
+      <%= render_subnav %>
+      
+      <div id="main"><div id="m">
+        <%= render 'shared/flashbox' %>          
         <%= yield %>
-      </div>
+      </div></div>
+      
     </div></div>
   </body>
 </html>

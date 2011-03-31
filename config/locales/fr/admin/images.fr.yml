@@ -1,0 +1,54 @@
+fr:
+  
+  activerecord:
+    errors:
+      models:
+        image:
+          attributes:
+            title:
+              blank: Vous devez donner un titre à cette image
+            image:
+              blank: Vous oubliez le fichier
+              wrong_format: Ce fichier n'est pas une image
+  
+  admin:
+    nav:
+      images: Media
+  
+  images:
+    
+    title: Titre
+    link: Lien
+    image_field: Fichier image
+    file_size: Taille
+    thumb: Vignette
+    
+    subnav: Images
+    
+    search:
+      title: Rechercher
+      image_title: Titre de l'image
+      submit: Rechercher
+    
+    styles:
+      original: original
+      medium: taille moyenne
+      thumb: vignette
+    
+    delete: Supprimer l'image
+    submit: Envoyer
+    
+    
+    no_image: pas d'image
+    
+    links:
+      new: Ajouter une image
+    
+    index:
+      title: Images
+      
+    new:
+      title: Ajouter une image
+      
+    edit:
+      title: Modifier l'image

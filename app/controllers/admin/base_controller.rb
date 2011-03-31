@@ -1,5 +1,6 @@
 module Admin
   class BaseController < ApplicationController
+    include BaseHelper
     
     rescue_from Acl9::AccessDenied, :with => :access_denied
     

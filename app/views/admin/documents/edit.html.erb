@@ -1,0 +1,7 @@
+<h1><%= t('documents.edit.title') %></h1>
+
+<p>
+  <strong><%= t('documents.file_name') %></strong> : <%= @document.doc_file_name %>
+</p>
+
+<%= render :partial => "form", :locals => { :document => @document } %>

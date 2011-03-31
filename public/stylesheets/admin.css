@@ -20,13 +20,21 @@ body {
   background:#FFF;
   padding:30px;
 }
+#m { padding:30px; }
 
-#nav { padding:0px; margin-bottom:20px; background-color:#333; color:#FFF; float:left; width:100%; }
+#nav { padding:0px; background-color:#333; color:#FFF; float:left; width:100%; }
 #nav ul { margin:0; list-style:none; }
-#nav ul#left { float:left; margin-left:15px; }
+#nav ul.left { float:left; margin-left:15px; }
 #nav ul li { float:left; padding:8px; }
 #nav a { color:#FFF; text-decoration:none; }
-#nav ul#right { float:right; margin-right:15px; }
+#nav ul.right { float:right; margin-right:15px; }
+
+#subnav { padding:0px; background-color:#CCC; color:#333; float:left; width:100%; }
+#subnav ul { margin:0; list-style:none; }
+#subnav ul.left { float:left; margin-left:15px; }
+#subnav ul li { float:left; padding:8px; }
+#subnav a { color:#333; text-decoration:none; }
+#subnav ul.right { float:right; margin-right:15px; }
 
 form.search { background:transparent; border:none; padding:0; margin:15px 0; width:97%; overflow:hidden; }
 form.search label { color:#333; line-height:1em; margin-bottom:1px; }
@@ -90,3 +98,9 @@ a.button {
   line-height: 9px; vertical-align: top; display: inline-block; 
 }
 #translations .no_translation { color:red; }
+
+/* =media
+-----------------------------------------------------*/
+#images { overflow:hidden }
+#images img.image_file { float:right; }
+.thumb { border:1px solid #CCC; padding:3px; }

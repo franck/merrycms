@@ -46,6 +46,11 @@ form p {
   margin:0;
   line-height:20px;
 }
+
+form div.instruct {
+  color:#666;
+}
+
 form p.instruct {
   margin:5px;
   margin-left:3px;

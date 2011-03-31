@@ -8,7 +8,7 @@
     <th><%= t('categories.link') %></th>
     <th></th>
   </tr>
-<%= render_cat @categories, :sort => lambda{|x| x.position } do |node, child| %>
+<% render_cat @categories, :sort => lambda{|x| x.position } do |node, child| %>
   <tr>
     <td><%= display_node(node) %></td>
     <td><%= node.link %></td>

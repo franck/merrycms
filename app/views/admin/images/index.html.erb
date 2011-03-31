@@ -1,0 +1,26 @@
+<h1><%= t('images.index.title') %></h1>
+
+<p>
+  <%= link_to t('images.links.new'), new_admin_image_path, :class => 'button' %>
+</p>
+
+<%= render "search" %>
+
+<%= paginate @images %>
+
+<table>
+  <tr>
+    <th width="100"><%= t('images.thumb') %></th>
+    <th><%= t('images.title') %></th>
+    <th><%= t('images.link') %></th>
+    <th><%= t('images.file_size') %></th>
+  </tr>
+  <% for image in @images %>
+  <tr>
+    <td><%= image_tag image.image.url(:thumb), :class => 'thumb' %></td>
+    <td><%= link_to image.title, edit_admin_image_path(image) %></td>
+    <td><%=raw display_image_links(image) %></td>
+    <td><%= number_to_human_size image.image_file_size %></td>
+  </tr>
+  <% end %>
+</table>

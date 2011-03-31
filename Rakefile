@@ -18,6 +18,9 @@ begin
     gemspec.add_dependency 'jquery-rails', '>= 0.2.6'
     gemspec.add_dependency 'kaminari'
     gemspec.add_dependency 'meta_search'
+    gemspec.add_dependency 'paperclip'
+    gemspec.add_dependency 'open4'
+    gemspec.add_dependency 'newbamboo-rvideo'
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError

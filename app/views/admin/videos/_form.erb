@@ -1,0 +1,38 @@
+<%= form_for [:admin, @video], :html => { :multipart => true } do |f| %>
+  <%= render "shared/error_messages", :target => @video %>
+  <div>
+    <%= f.label :title, t('videos.title'), :class => "desc required" %>
+    <%= f.text_field :title, :size => "80" %>
+  </div>
+  <h3><%= t('videos.sources.title') %></h3>
+  <%=raw t('videos.sources.instruct') %>
+  
+  <% @index = 0 %>
+  <%= f.fields_for :sources do |source_form| %>
+  <div>
+      <%= source_form.label :video, t('videos.sources.file') %>
+      <%= source_form.object.attributes['video_file_name'] %>
+      <%= source_form.file_field :video %>
+      <%= source_form.label :container_type, t('videos.sources.container_type')%>
+      <%= source_form.hidden_field :container_type, :value => source_form.object.attributes[:container_type] || Source::CONTAINER_TYPES[@index] %>
+      <%= source_form.object.attributes[:container_type] || Source::CONTAINER_TYPES[@index] %>
+      <% if source_form.object.attributes && source_form.object.attributes['video_file_size'] %>
+        <strong><%= t('videos.file_size') %></strong>
+        <%= number_to_human_size source_form.object.attributes['video_file_size'] %>
+      <% end %>
+  </div>
+    <% @index += 1 %>
+  <% end %>
+  
+  <div>
+    <%= f.submit t('videos.submit') %>
+    <%= link_to t('cancel'), admin_videos_path %>
+  </div>
+<% end %>
+
+<% if @video.id %>
+  <%= form_for [:admin, @video], :html => { :method => "delete" } do |f| %>
+    <input type="hidden" name="_method" value="delete" />
+    <button type="submit"><%= t('videos.delete') %></button>
+  <% end %>
+<% end %>

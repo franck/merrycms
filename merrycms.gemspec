@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Franck D'agostini"]
-  s.date = %q{2011-03-23}
+  s.date = %q{2011-03-25}
   s.description = %q{Admin panel for rails3 app : user management, pages, categories}
   s.email = %q{franck.dagostini@gmail.com}
   s.extra_rdoc_files = [
@@ -18,29 +18,54 @@ Gem::Specification.new do |s|
   s.files = [
     "app/controllers/admin/base_controller.rb",
     "app/controllers/admin/categories_controller.rb",
+    "app/controllers/admin/documents_controller.rb",
+    "app/controllers/admin/images_controller.rb",
     "app/controllers/admin/pages_controller.rb",
     "app/controllers/admin/translations_controller.rb",
     "app/controllers/admin/users_controller.rb",
+    "app/controllers/admin/videos_controller.rb",
+    "app/helpers/admin/base_helper.rb",
     "app/helpers/admin/categories_helper.rb",
+    "app/helpers/admin/documents_helper.rb",
+    "app/helpers/admin/images_helper.rb",
     "app/helpers/admin/pages_helper.rb",
     "app/helpers/admin/translations_helper.rb",
     "app/helpers/admin/users_helper.rb",
+    "app/helpers/admin/videos_helper.rb",
     "app/models/category.rb",
+    "app/models/document.rb",
+    "app/models/image.rb",
     "app/models/page.rb",
     "app/models/role.rb",
+    "app/models/source.rb",
     "app/models/translation.rb",
     "app/models/user.rb",
-    "app/views/admin/_nav.html.erb",
+    "app/models/video.rb",
     "app/views/admin/categories/_form.erb",
     "app/views/admin/categories/edit.html.erb",
     "app/views/admin/categories/index.html.erb",
     "app/views/admin/categories/new.html.erb",
     "app/views/admin/categories/sort.html.erb",
+    "app/views/admin/documents/_form.erb",
+    "app/views/admin/documents/_search.erb",
+    "app/views/admin/documents/_subnav.erb",
+    "app/views/admin/documents/edit.html.erb",
+    "app/views/admin/documents/index.html.erb",
+    "app/views/admin/documents/new.html.erb",
+    "app/views/admin/images/_form.erb",
+    "app/views/admin/images/_search.erb",
+    "app/views/admin/images/_subnav.erb",
+    "app/views/admin/images/edit.html.erb",
+    "app/views/admin/images/index.html.erb",
+    "app/views/admin/images/new.html.erb",
     "app/views/admin/pages/_form.html.erb",
     "app/views/admin/pages/_search.erb",
     "app/views/admin/pages/edit.html.erb",
     "app/views/admin/pages/index.html.erb",
     "app/views/admin/pages/new.html.erb",
+    "app/views/admin/shared/_nav.erb",
+    "app/views/admin/shared/_subnav.erb",
+    "app/views/admin/shared/_toplinks.erb",
     "app/views/admin/translations/_edit_javascript.erb",
     "app/views/admin/translations/_filter.html.erb",
     "app/views/admin/translations/_form.erb",
@@ -52,6 +77,13 @@ Gem::Specification.new do |s|
     "app/views/admin/users/edit.html.erb",
     "app/views/admin/users/index.html.erb",
     "app/views/admin/users/new.html.erb",
+    "app/views/admin/videos/_form.erb",
+    "app/views/admin/videos/_search.erb",
+    "app/views/admin/videos/_subnav.erb",
+    "app/views/admin/videos/edit.html.erb",
+    "app/views/admin/videos/index.html.erb",
+    "app/views/admin/videos/new.html.erb",
+    "app/views/admin/videos/show.html.erb",
     "app/views/devise/confirmations/new.html.erb",
     "app/views/devise/mailer/confirmation_instructions.html.erb",
     "app/views/devise/mailer/reset_password_instructions.html.erb",
@@ -67,11 +99,14 @@ Gem::Specification.new do |s|
     "app/views/layouts/login.html.erb",
     "app/views/shared/_error_messages.html.erb",
     "app/views/shared/_flashbox.html.erb",
-    "app/views/shared/_toplinks.html.erb",
+    "config/locales/de/de.yml",
     "config/locales/en/admin/missing.yml",
+    "config/locales/en/en-US.yml",
     "config/locales/fr/admin/admin.fr.yml",
     "config/locales/fr/admin/category.fr.yml",
     "config/locales/fr/admin/devise.fr.yml",
+    "config/locales/fr/admin/documents.fr.yml",
+    "config/locales/fr/admin/images.fr.yml",
     "config/locales/fr/admin/merrycms.fr.yml",
     "config/locales/fr/admin/missing.yml",
     "config/locales/fr/admin/pages.fr.yml",
@@ -79,21 +114,32 @@ Gem::Specification.new do |s|
     "config/locales/fr/admin/toplinks.fr.yml",
     "config/locales/fr/admin/translations.fr.yml",
     "config/locales/fr/admin/users.fr.yml",
+    "config/locales/fr/admin/videos.fr.yml",
+    "config/locales/fr/fr.yml",
     "lib/generators/merrycms/install_auth_generator.rb",
+    "lib/generators/merrycms/install_documents_generator.rb",
+    "lib/generators/merrycms/install_images_generator.rb",
     "lib/generators/merrycms/install_pages_generator.rb",
     "lib/generators/merrycms/install_translations_generator.rb",
+    "lib/generators/merrycms/install_videos_generator.rb",
+    "lib/generators/merrycms/templates/create_documents_migration.rb",
+    "lib/generators/merrycms/templates/create_images_migration.rb",
     "lib/generators/merrycms/templates/create_pages_and_categories_migration.rb",
     "lib/generators/merrycms/templates/create_roles_migration.rb",
     "lib/generators/merrycms/templates/create_translations_migration.rb",
+    "lib/generators/merrycms/templates/create_videos_migration.rb",
     "lib/generators/merrycms/templates/devise_create_users_migration.rb",
     "lib/generators/merrycms/templates/devise_initializer.rb",
     "lib/generators/merrycms/templates/locale_initializer.rb",
+    "lib/generators/merrycms/templates/paperclip_initializer.rb",
     "lib/generators/merrycms/templates/roles_users_migration.rb",
     "lib/generators/merrycms/views_generator.rb",
     "lib/merrycms.rb",
     "lib/merrycms/engine.rb",
     "lib/merrycms/rails/routes.rb",
-    "lib/merrycms/railties/merrycms_tasks.rake"
+    "lib/merrycms/railties/merrycms_tasks.rake",
+    "lib/merrycms/validates_as_image.rb",
+    "lib/paperclip_processors/video_thumbnail.rb"
   ]
   s.homepage = %q{https://github.com/franck/merrycms}
   s.require_paths = ["lib"]
@@ -115,6 +161,9 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<jquery-rails>, [">= 0.2.6"])
       s.add_runtime_dependency(%q<kaminari>, [">= 0"])
       s.add_runtime_dependency(%q<meta_search>, [">= 0"])
+      s.add_runtime_dependency(%q<paperclip>, [">= 0"])
+      s.add_runtime_dependency(%q<open4>, [">= 0"])
+      s.add_runtime_dependency(%q<newbamboo-rvideo>, [">= 0"])
     else
       s.add_dependency(%q<devise>, [">= 1.1.7"])
       s.add_dependency(%q<acl9>, [">= 0"])
@@ -126,6 +175,9 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<jquery-rails>, [">= 0.2.6"])
       s.add_dependency(%q<kaminari>, [">= 0"])
       s.add_dependency(%q<meta_search>, [">= 0"])
+      s.add_dependency(%q<paperclip>, [">= 0"])
+      s.add_dependency(%q<open4>, [">= 0"])
+      s.add_dependency(%q<newbamboo-rvideo>, [">= 0"])
     end
   else
     s.add_dependency(%q<devise>, [">= 1.1.7"])
@@ -138,6 +190,9 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<jquery-rails>, [">= 0.2.6"])
     s.add_dependency(%q<kaminari>, [">= 0"])
     s.add_dependency(%q<meta_search>, [">= 0"])
+    s.add_dependency(%q<paperclip>, [">= 0"])
+    s.add_dependency(%q<open4>, [">= 0"])
+    s.add_dependency(%q<newbamboo-rvideo>, [">= 0"])
   end
 end
 

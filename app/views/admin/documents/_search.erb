@@ -1,0 +1,15 @@
+<%= form_for @search, :url => admin_documents_path, :html => {:method => :get, :class => 'search'} do |f| %>
+<div>
+  <h3><%= t('documents.search.title') %></h3>
+  <div class='top'>
+    <%= f.label :title_contains, t('documents.search.document_title'), :class => 'desc' %>
+    <%= f.text_field :title_contains, :size => "20" %>
+  </div>
+  <div class='top'>
+    <label>&nbsp;</label>
+    <p>
+      <%= f.submit t('documents.search.submit') %>
+    </p>
+  </div>
+</div>
+<% end %>

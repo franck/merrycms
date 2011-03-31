@@ -14,20 +14,14 @@
     <th><%= t('pages.state') %></th>
     <th></th>
   </tr>
-  <% if @pages.size == 0 %>
+  <% @pages.each do |page| %>
   <tr>
-    <td colspan="5">Aucune page</td>
+    <td><%= link_to page.title, edit_admin_page_path(page) %></a></td>
+    <td><%= page.link %></td>
+    <td><%= display_page_category(page) %></td>
+    <td><%= display_state(page) %></td>
+    <td><%= display_events(page) %></td>
   </tr>
-  <% else %>
-    <% @pages.each do |page| %>
-    <tr>
-      <td><%= link_to page.title, edit_admin_page_path(page) %></a></td>
-      <td><%= page.link %></td>
-      <td><%= display_page_category(page) %></td>
-      <td><%= display_state(page) %></td>
-      <td><%= display_events(page) %></td>
-    </tr>
-    <% end %>
   <% end %>
 </table>
 

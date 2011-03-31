@@ -3,13 +3,9 @@ module Admin
   
     def render_cat hash, options = {}, &block
       sort_proc = options.delete :sort
-      content_tag :tr, options do
-        content_tag :td do
-          hash.keys.sort_by(&sort_proc).each do |node|
-            block.call node, render_tree(hash[node], :sort => sort_proc, &block)
-          end
-        end
-      end if hash.present?
+      hash.keys.sort_by(&sort_proc).each do |node|
+        block.call node, render_tree(hash[node], :sort => sort_proc, &block)
+      end
     end
   
     def display_node(node)

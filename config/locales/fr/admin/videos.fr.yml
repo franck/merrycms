@@ -1,0 +1,42 @@
+fr:
+  activerecord:
+    errors:
+      models:
+        video:
+          attributes:
+            title:
+              blank: Vous devez donner un titre à cette vidéo
+
+  videos:
+    title: Titre
+    link: Lien
+    file_size: Taille
+    submit: Envoyer
+    delete: Supprimer cette vidéo
+    no_source: aucune source
+    
+    sources:
+      title: Sources
+      file: Fichier
+      container_type: Type
+      instruct: "<div class='instruct'><p class='nomargin'>Il est recommandé d'ajouter plusieurs sources de video afin d'assurer le maximum de compatibilité entre les navigateurs web. Le MP4 est obligatoire puisqu'il sera utilisé par le lecteur de secours. Ainsi :</p><ul><li>MP4 : Lecteur Flash de secours, Safari, iPhone, iPad</li><li>WebM : Firefox, Chrome et Opera</li><li>Theora : Ancienne version de Firefox, Chrome et Opera</li></ul></div>"
+    
+    subnav: Videos
+    
+    links:
+      new: Ajouter une video
+      back_to_index: "&laquo; toutes les videos"
+      edit: modifier
+      
+    search:
+      title: Rechercher
+      submit: Rechercher
+      video_title: Titre de la video
+  
+    
+    index:
+      title: Videos
+    new:
+      title: Ajouter une video
+    edit:
+      title: Modifier la vidéo

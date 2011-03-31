@@ -32,6 +32,11 @@ module ActionDispatch::Routing
         match 'translations/pending/:language' => 'translations#pending', :as => 'pending_translations'
         match 'translations/all/:language' => 'translations#all', :as => 'all_translations'
         
+        resources :images
+        resources :documents
+        resources :videos
+        
+        
         root :to => 'pages#index'
       end
     end

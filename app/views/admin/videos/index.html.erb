@@ -1,0 +1,24 @@
+<h1><%= t('videos.index.title') %></h1>
+
+<p>
+  <%= link_to t('videos.links.new'), new_admin_video_path, :class => 'button' %>
+</p>
+
+<%= render "search" %>
+
+<%= paginate @videos %>
+
+<table>
+  <tr>
+    <th><%= t('videos.title') %></th>
+    <th><%= t('videos.file_size') %></th>
+    <th></th>
+  </tr>
+  <% for video in @videos %>
+  <tr>
+    <td><%= link_to video.title, admin_video_path(video) %></td>
+    <td><%= display_video_size(video) %></td>
+    <td><%= link_to t('videos.links.edit'), edit_admin_video_path(video) %></td>
+  </tr>
+  <% end %>
+</table>

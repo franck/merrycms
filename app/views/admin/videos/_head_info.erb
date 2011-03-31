@@ -1,0 +1,13 @@
+<% content_for :head do %>
+  <link rel="stylesheet" href="/stylesheets/video-js.css" type="text/css" media="screen" title="Video JS"> 
+  <link rel="stylesheet" href="/stylesheets/skins/vim.css" type="text/css" media="screen" title="Video JS"> 
+  <link rel="stylesheet" href="/stylesheets/skins/hu.css" type="text/css" media="screen" title="Video JS"> 
+
+  <script src="/javascripts/video.js" type="text/javascript" charset="utf-8"></script> 
+
+  <script type="text/javascript">
+    $(function(){
+      $("video").VideoJS()
+    });
+  </script>
+<% end %>

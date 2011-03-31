@@ -1,0 +1,22 @@
+<%= form_for [:admin, @image], :html => { :multipart => true } do |f| %>
+  <%= render "shared/error_messages", :target => @image %>
+  <div>
+    <%= f.label :title, t('images.title'), :class => "desc required" %>
+    <%= f.text_field :title, :size => "80" %>
+  </div>
+  <div>
+    <%= f.label :image, t('images.image_field') %>
+    <%= f.file_field :image %>
+  </div>
+  <div>
+    <%= f.submit t('images.submit') %>
+    <%= link_to t('cancel'), admin_images_path %>
+  </div>
+<% end %>
+
+<% if @image.id %>
+  <%= form_for [:admin, @image], :html => { :method => "delete" } do |f| %>
+    <input type="hidden" name="_method" value="delete" />
+    <button type="submit"><%= t('images.delete') %></button>
+  <% end %>
+<% end %>

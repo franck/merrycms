@@ -1,0 +1,22 @@
+<%= form_for [:admin, @document], :html => { :multipart => true } do |f| %>
+  <%= render "shared/error_messages", :target => @document %>
+  <div>
+    <%= f.label :title, t('documents.title'), :class => "desc required" %>
+    <%= f.text_field :title, :size => "80" %>
+  </div>
+  <div>
+    <%= f.label :doc, t('documents.doc_field') %>
+    <%= f.file_field :doc %>
+  </div>
+  <div>
+    <%= f.submit t('documents.submit') %>
+    <%= link_to t('cancel'), admin_documents_path %>
+  </div>
+<% end %>
+
+<% if @document.id %>
+  <%= form_for [:admin, @document], :html => { :method => "delete" } do |f| %>
+    <input type="hidden" name="_method" value="delete" />
+    <button type="submit"><%= t('documents.delete') %></button>
+  <% end %>
+<% end %>

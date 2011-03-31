@@ -5,6 +5,9 @@ namespace :merrycms do
     system("rails generate merrycms:install_auth")
     system("rails generate merrycms:install_pages")
     system("rails generate merrycms:install_translations")
+    system("rails generate merrycms:install_images")
+    system("rails generate merrycms:install_documents")
+    system("rails generate merrycms:install_videos")
     system("rails generate jquery:install")
     
     Rake::Task['merrycms:import_assets'].invoke

@@ -1,0 +1,8 @@
+<p>
+<%= link_to raw(t('videos.links.back_to_index')), admin_videos_path %>
+&nbsp;<%= link_to t('videos.links.edit'), edit_admin_video_path(@video) %>
+</p>
+
+<%=raw display_video(@video, 480, 270) %>
+
+<%= render 'head_info' %>
