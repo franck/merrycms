@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{merrycms}
-  s.version = "0.1.4"
+  s.version = "0.1.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Franck D'agostini"]
@@ -118,11 +118,9 @@ Gem::Specification.new do |s|
     "config/locales/fr/admin/videos.fr.yml",
     "config/locales/fr/fr.yml",
     "lib/generators/merrycms/install_auth_generator.rb",
-    "lib/generators/merrycms/install_documents_generator.rb",
-    "lib/generators/merrycms/install_images_generator.rb",
+    "lib/generators/merrycms/install_media_generator.rb",
     "lib/generators/merrycms/install_pages_generator.rb",
     "lib/generators/merrycms/install_translations_generator.rb",
-    "lib/generators/merrycms/install_videos_generator.rb",
     "lib/generators/merrycms/templates/create_documents_migration.rb",
     "lib/generators/merrycms/templates/create_images_migration.rb",
     "lib/generators/merrycms/templates/create_pages_and_categories_migration.rb",
