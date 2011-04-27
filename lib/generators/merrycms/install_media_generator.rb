@@ -2,7 +2,7 @@ require 'rails/generators'
 require 'rails/generators/migration'
 
 module Merrycms
-  class InstallImagesGenerator < Rails::Generators::Base
+  class InstallMediaGenerator < Rails::Generators::Base
     include Rails::Generators::Migration
   
     def self.source_root
@@ -24,6 +24,16 @@ module Merrycms
         
     def copy_locale_initializer
       copy_file 'paperclip_initializer.rb', 'config/initializers/paperclip.rb'
+    end
+    
+    def create_translations_migration_files
+      migration_template 'create_documents_migration.rb', 'db/migrate/create_documents.rb'
+      sleep 1
+    end
+    
+    def create_translations_migration_files
+      migration_template 'create_videos_migration.rb', 'db/migrate/create_videos.rb'
+      sleep 1
     end
   
   end

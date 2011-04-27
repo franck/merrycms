@@ -18,7 +18,8 @@ body {
 
 #main {
   background:#FFF;
-  padding:30px;
+  float:left;
+  width:100%;
 }
 #m { padding:30px; }
 

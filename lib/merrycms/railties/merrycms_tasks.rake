@@ -5,9 +5,7 @@ namespace :merrycms do
     system("rails generate merrycms:install_auth")
     system("rails generate merrycms:install_pages")
     system("rails generate merrycms:install_translations")
-    system("rails generate merrycms:install_images")
-    system("rails generate merrycms:install_documents")
-    system("rails generate merrycms:install_videos")
+    system("rails generate merrycms:install_media")
     system("rails generate jquery:install")
     
     Rake::Task['merrycms:import_assets'].invoke
@@ -24,7 +22,7 @@ namespace :merrycms do
     system(command)
   end
 
-  desc "bootstrap app"
+  desc "bootstrap app : create admin user and root category"
   task :bootstrap => :environment do
     create_admins
     create_root_cat
@@ -47,7 +45,7 @@ namespace :merrycms do
     Category.find_or_create_by_name("root")
   end
   
-  desc "cleanup current app"
+  desc "CAUTIOUS : cleanup current app by dropping the DB and removing all migration files"
   task :cleanapp => :environment do
     Rake::Task['db:drop'].invoke
     command = "rm -rf #{Rails.root}/db/migrate/*"
