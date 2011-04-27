@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{merrycms}
-  s.version = "0.1.2"
+  s.version = "0.1.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Franck D'agostini"]
-  s.date = %q{2011-03-25}
+  s.date = %q{2011-04-27}
   s.description = %q{Admin panel for rails3 app : user management, pages, categories}
   s.email = %q{franck.dagostini@gmail.com}
   s.extra_rdoc_files = [
@@ -78,6 +78,7 @@ Gem::Specification.new do |s|
     "app/views/admin/users/index.html.erb",
     "app/views/admin/users/new.html.erb",
     "app/views/admin/videos/_form.erb",
+    "app/views/admin/videos/_head_info.erb",
     "app/views/admin/videos/_search.erb",
     "app/views/admin/videos/_subnav.erb",
     "app/views/admin/videos/edit.html.erb",
@@ -139,6 +140,7 @@ Gem::Specification.new do |s|
     "lib/merrycms/rails/routes.rb",
     "lib/merrycms/railties/merrycms_tasks.rake",
     "lib/merrycms/validates_as_image.rb",
+    "lib/paperclip_processors/poster.rb",
     "lib/paperclip_processors/video_thumbnail.rb"
   ]
   s.homepage = %q{https://github.com/franck/merrycms}
