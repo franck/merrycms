@@ -17,7 +17,7 @@ module Merrycms
       end
     end
               
-    def create_translations_migration_files
+    def create_images_migration_files
       migration_template 'create_images_migration.rb', 'db/migrate/create_images.rb'
       sleep 1
     end
@@ -26,12 +26,12 @@ module Merrycms
       copy_file 'paperclip_initializer.rb', 'config/initializers/paperclip.rb'
     end
     
-    def create_translations_migration_files
+    def create_documents_migration_files
       migration_template 'create_documents_migration.rb', 'db/migrate/create_documents.rb'
       sleep 1
     end
     
-    def create_translations_migration_files
+    def create_videos_migration_files
       migration_template 'create_videos_migration.rb', 'db/migrate/create_videos.rb'
       sleep 1
     end
