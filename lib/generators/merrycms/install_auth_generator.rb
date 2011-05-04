@@ -40,26 +40,7 @@ module Merrycms
       sleep 1
       migration_template 'roles_users_migration.rb', 'db/migrate/roles_users.rb'
       sleep 1
-    end
-      
-    def create_page_and_category_migration_files
-      migration_template 'create_pages_and_categories_migration.rb', 'db/migrate/create_pages_and_categories.rb'
-      sleep 1
-    end
-    
-    # pages and categories
-    def generate_slugs_table
-      invoke 'friendly_id'
-    end
-    
-    def create_translations_migration_files
-      migration_template 'create_translations_migration.rb', 'db/migrate/create_translations.rb'
-      sleep 1
-    end
-        
-    def copy_locale_initializer
-      copy_file 'locale_initializer.rb', 'config/initializers/locale.rb'
-    end
+    end    
   
   end
 end

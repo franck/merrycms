@@ -25,15 +25,7 @@ module Merrycms
     # pages and categories
     def generate_slugs_table
       invoke 'friendly_id'
-    end
-    
-    def create_translations_migration_files
-      migration_template 'create_translations_migration.rb', 'db/migrate/create_translations.rb'
       sleep 1
-    end
-        
-    def copy_locale_initializer
-      copy_file 'locale_initializer.rb', 'config/initializers/locale.rb'
     end
   
   end
