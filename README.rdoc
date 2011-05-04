@@ -1,0 +1,16 @@
+= Merrycms
+
+== Install
+  
+  gem 'merrycms'
+  
+  $ bundle install
+  
+== Usage
+  
+  rake merrycms:setup
+  rake db:migrate
+  rake merrycms:bootstrap
+  
+start the server and go to '/admin'
+  
