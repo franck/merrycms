@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
     user_roles = roles.map{|r| r if self.has_role?(r.name) }
   end
   
-  def last_admin?(role=nil)
+  def last_admin?(role="admin")
     last_admin = false
     if role == "admin" and self.has_role?("admin") and User.admins.size == 1
       last_admin = true
