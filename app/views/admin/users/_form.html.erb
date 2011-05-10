@@ -14,8 +14,8 @@
   </div>
   
   <ul id="roles">
-  <% for role in Role::ROLES %>      
-    <li><%= check_box_tag "roles[]", role, @user.has_role?(role), :disabled => @user.last_admin? %><%= role %></li>
+  <% for role in Role::ROLES %>
+    <li><%= check_box_tag "roles[]", role, @user.has_role?(role), :disabled => @user.last_admin?(role) %><%= role %></li>
   <% end -%>
   </ul>
   
